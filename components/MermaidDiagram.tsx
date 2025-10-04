@@ -12,8 +12,9 @@ export default function MermaidDiagram({ chart }: MermaidDiagramProps) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Initialize mermaid with proper configuration
     mermaid.initialize({
-      startOnLoad: true,
+      startOnLoad: false,
       theme: 'dark',
       themeVariables: {
         primaryColor: '#60a5fa',
@@ -29,25 +30,42 @@ export default function MermaidDiagram({ chart }: MermaidDiagramProps) {
         fontSize: '16px',
       },
       securityLevel: 'loose',
+      logLevel: 'error',
+      timeline: {
+        disableMulticolor: false,
+      },
     });
 
     const renderDiagram = async () => {
       if (!containerRef.current) return;
 
       try {
-        const { svg } = await mermaid.render(
-          `mermaid-${Math.random().toString(36).substr(2, 9)}`,
-          chart
-        );
-        containerRef.current.innerHTML = svg;
-        setError(null);
-      } catch (err) {
+        // Clear container first
+        containerRef.current.innerHTML = '';
+
+        // Validate mermaid syntax
+        const trimmedChart = chart.trim();
+        if (!trimmedChart) {
+          throw new Error('Empty diagram');
+        }
+
+        const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
+        const { svg } = await mermaid.render(id, trimmedChart);
+
+        if (containerRef.current) {
+          containerRef.current.innerHTML = svg;
+          setError(null);
+        }
+      } catch (err: any) {
         console.error('Mermaid rendering error:', err);
-        setError('Failed to render diagram');
+        setError(err.message || 'Failed to render diagram');
       }
     };
 
-    renderDiagram();
+    // Add a small delay to ensure DOM is ready
+    const timeoutId = setTimeout(renderDiagram, 100);
+
+    return () => clearTimeout(timeoutId);
   }, [chart]);
 
   if (error) {
