@@ -4,7 +4,7 @@
 
 Built with ❤️ by [Sagar Kumar](https://www.linkedin.com/in/sagar-kumar-iit-kgp/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/md-converter-pro)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sagar54368/md_convertor)
 
 ## ✨ Features
 
@@ -52,8 +52,8 @@ Built with ❤️ by [Sagar Kumar](https://www.linkedin.com/in/sagar-kumar-iit-k
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/md-converter-pro.git
-cd md-converter-pro
+git clone https://github.com/sagar54368/md_convertor.git
+cd md_convertor
 
 # Install dependencies
 npm install
@@ -78,7 +78,7 @@ Click the "Deploy with Vercel" button above and follow the prompts.
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/md-converter-pro.git
+   git remote add origin https://github.com/sagar54368/md_convertor.git
    git push -u origin main
    ```
 
@@ -164,7 +164,19 @@ MIT License - feel free to use this project however you like!
 Created by **Sagar Kumar** (IIT Kharagpur)
 
 - LinkedIn: [linkedin.com/in/sagar-kumar-iit-kgp](https://www.linkedin.com/in/sagar-kumar-iit-kgp/)
-- GitHub: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
+- GitHub: [@sagar54368](https://github.com/sagar54368)
+
+## 🌟 Contributing
+
+Love this project? Here's how you can help:
+
+1. **Star this repository** ⭐ - It really helps!
+2. **Share with others** - Spread the word
+3. **Report bugs** - Open an issue if you find something
+4. **Suggest features** - We're always improving
+5. **Submit PRs** - Contributions are welcome!
+
+All contributions, big or small, are appreciated and will be acknowledged.
 
 If you find this useful, please ⭐ star the repository!
 
